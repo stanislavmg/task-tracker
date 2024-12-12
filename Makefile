@@ -73,8 +73,8 @@ format:
 
 # Internal hidden targets that are used only in docker environment
 --in-docker-start-debug --in-docker-start-release: --in-docker-start-%: install-%
-	psql 'postgresql://user:password@service-postgres3:5432/task-tracker_db-1' -f ./postgresql/schema/V001__create_tables.sql
-	psql 'postgresql://user:password@service-postgres3:5432/task-tracker_db-1' -f ./postgresql/data/V002__fill_tables.sql
+	psql 'postgresql://user:password@service-postgres:5432/task-tracker_db-1' -f ./postgresql/schema/V001__create_tables.sql
+	psql 'postgresql://user:password@service-postgres:5432/task-tracker_db-1' -f ./postgresql/data/V002__fill_tables.sql
 	/home/user/.local/bin/task-tracker \
 		--config /home/user/.local/etc/task-tracker/static_config.yaml \
 		--config_vars /home/user/.local/etc/task-tracker/config_vars.docker.yaml
@@ -101,7 +101,7 @@ docker-clean-data:
 docker-build-bot:
 	docker build -t tg_bot ./tg-bot
 
-docker-start-bot:
+docker-start-bot: docker-build-bot
 	docker run -it --rm --name tg-running-bot tg_bot
 
 docker-stop-bot:
