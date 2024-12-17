@@ -1,12 +1,10 @@
-# task-tracker
-
 # Task Tracker Bot
 
 A **task tracker** with a simple interface in a **Telegram bot**. The service is built using the **Userver** asynchronous framework, ensuring high performance and scalability.
 
 ---
 
-## 🚀 Features
+## Features
 
 - **User Registration and Login**
 - **Task Management**: Create, edit, and delete tasks
@@ -16,7 +14,7 @@ A **task tracker** with a simple interface in a **Telegram bot**. The service is
 
 ---
 
-## 🛠 Installation
+## Installation
 
 Follow these steps to set up and run the project:
 
@@ -26,7 +24,7 @@ cd task-tracker
 git submodule update --init --recursive
 ```
 
-## 🚀 Running the Service
+## Running the Service
 
 To launch the task tracker service using Docker:
 
@@ -40,13 +38,13 @@ For a local launch:
 make start-release
 ```
 
-## 🤖 Running the Telegram Bot
+## Running the Telegram Bot
 
 ```bash
 make docker-start-bot
 ```
 
-## ✅ Testing the Service
+## Testing the Service
 
 ```bash
 make test-release
